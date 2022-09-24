@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="{% static 'imgs/signup-browser-icon.png' %}"/>
+        <title>Signup</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <!-- CSS only -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+         <link href="{% static 'css/login-style.css' %}?version=1" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="cont">
+                <div class="form-title">
+                    <span><i class="fa-solid fa-user-plus"></i></span>
+                    <span>Signup now</span>
+                </div>
+                <form enctype="multipart/form-data" method="post" action="add/">
+                    {% csrf_token %}
+                    <div class="grp form-group">
+                      <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" required>
+                    </div>
+                    <div class="grp form-group">
+                        <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname" required>
+                    </div>
+                    <div class="grp form-group">
+                        <input type="text" class="form-control" id="user" placeholder="Username" name="user" required>
+                    </div>
+                    <div class="grp form-group">
+                        <input type="password" class="form-control" id="pwd" placeholder="Password" name="pwd" required>
+                    </div>
+                    <div class="grp form-group">
+                        <label for="#img">Profile Picture</label>
+                        <input type="file" class="form-control" id="img" placeholder="image" name="img" required>
+                    </div>
+                    <div class="grp">
+                        <button type="submit" class="btn btn-primary">Signup</button>
+                        <a href="/">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/ba431855d1.js" crossorigin="anonymous"></script>
+    </body>
+</html>

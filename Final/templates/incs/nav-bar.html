@@ -1,0 +1,26 @@
+{% load static %}
+<!-- =========================== NAV BAR ========================= -->
+<nav id="navbar" class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/dashboard/{{user.username}}">
+        <i class="logo fa-brands fa-btc"></i>
+        <span class="title">Expense Tracking System</span>    
+    </a>
+    <div class="navbar">
+        <div class="nav-item">
+            <a class="parent" href="/">
+                <i class="disc fa-solid fa-power-off"></i>
+            </a>
+        </div>
+        <div class="nav-item">
+            <a class="parent" href="#notif">
+                <i class="notif fa-regular fa-bell"></i>
+            </a>
+        </div>
+        <div class="nav-item">
+            <a class="parent" href="/dashboard/{{user.username}}">
+                <div class="profile" style="background-image: url('{% static user.profile %}');"></div>                
+            </a>    
+        </div>
+    </div>
+</nav>
+<!-- =========================== END NAV BAR ========================= -->

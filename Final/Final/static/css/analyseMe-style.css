@@ -1,0 +1,93 @@
+body {
+    font-family: Montserrat;
+    background-color: rgb(221, 218, 213);
+    box-sizing: border-box;
+}
+
+label {
+    width: 300px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+input[type='file'] {
+    cursor: pointer;
+}
+
+.cont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.item {
+    width: 33%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(114, 113, 113);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.item .icon {
+    color: #3AAFD1;
+    font-size: 44px;
+}
+
+.item .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.it {
+    width: 47%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(114, 113, 113);
+    margin: 15px 2% 0 0;
+}
+
+.chart svg {
+    width: 375pt;
+    height: 300pt;
+}
+
+/*---------------------- STYLING ERRORS -------------------*/
+.err {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red;
+    background-color: rgb(224, 227, 230);
+    border: 1px solid red;
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    margin: 25px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

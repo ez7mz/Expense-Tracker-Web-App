@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block welcome %}
+<!-- =========================== WELCOMING ========================= -->
+<div class="welcome">
+    <h2><i class="fa-solid fa-arrow-right-from-bracket"></i></h2>
+    <h2>Welcome {{user.fname}} {{user.lname}}</h2>
+</div>
+<!-- =========================== END WELCOMING ========================= -->
+{% endblock welcome %}
+
+{% block content %}
+<!-- =========================== MAIN CONTENT ========================= -->
+<main class="container">
+    <div class="sec sec-1 cont-sec">
+        <i class="fa-brands fa-google-wallet sec-fa"></i>
+        <span class="sec-title">Wallet</span>
+        <span class="sec-value">{{user.balance}} USD</span>
+    </div>
+    <div class="sec sec-2 cont-sec">
+        <i class="fa-solid fa-circle-dollar-to-slot sec-fa"></i>
+        <span class="sec-title">Percentage</span>
+        <span class="sec-value">{{growth}} %</span>
+    </div>
+    <div class="sec sec-3 cont-sec">
+        {{ graph|safe }}
+    </div>
+    <div class="sec sec-4 cont-sec">
+        <i class="fa-solid fa-hand-holding-dollar sec-fa"></i>
+        <span class="sec-title">Income</span>
+        <span class="sec-value">{{user.income}} USD</span>
+    </div>
+    <div class="sec sec-5 cont-sec">
+        <i class="fa-solid fa-coins sec-fa"></i>
+        <span class="sec-title">Expense</span>
+        <span class="sec-value">{{user.expense}} USD</span>
+    </div>
+    <div class="sec sec-6 cont-sec1">
+        <div class="sec-6-bar">
+            <!---------------- Button trigger modal -------------->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                + Add Expense
+            </button>
+            
+            <!------------ Modal ---------------->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="add/" method="post">
+                            {% csrf_token %} 
+                            <div class="modal-body">
+                                <div class="input-grp mb-3">
+                                    <label for="#user">Username</label>
+                                    <input class="form-control" type="text" name="user" value="{{user.username}}" readonly>
+                                </div>
+                                <div class="input-grp mb-3">
+                                    <label for="#title">Title</label>
+                                    <input class="form-control" type="text" name="title" id="title" required>
+                                </div>
+                                <div class="input mb-3">
+                                    <label for="#amount">Amount</label>
+                                    <input class="form-control" type="number" name="amount" id="amount" required>
+                                </div>
+                                <div class="input mb-3">
+                                    <select id="Type" class="form-select" aria-label="Default select example" name="type" required>
+                                        <option selected>Open to select type</option>
+                                        <option value="Expense">Expense</option>
+                                        <option value="Income">Income</option>
+                                    </select>
+                                </div>
+                                <div class="input mb-3">
+                                    <label for="#date">Date</label>
+                                    <input class="form-control" type="date" name="date" id="date" required>
+                                </div>
+                                <div class="input mb-3">
+                                    <label for="#category">Category</label>
+                                    <input list="datalistOptions" class="form-control" type="text" name="category" aria-describedby="#cat-helper" id="categ">
+                                    <datalist id="datalistOptions">
+                                        <option value="Housing">
+                                        <option value="School">
+                                        <option value="Transportation">
+                                        <option value="Insurance">
+                                        <option value="Medical">
+                                        <option value="Saving">
+                                        <option value="Shooping">
+                                      </datalist>
+                                    <div id="categ" class="form-text">For better experience chouse category from the data list</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead class="bg-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Expense</th>
+                <th scope="col">Amount USD</th>
+                <th scope="col">Category</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                    <tr>
+                        <th scope="row">{{item.Id}}</th>
+                        <td>{{item.date}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.amount}} $</td>
+                        <td>{{item.Category}}</td>
+                        <td id="dlt"><a class="parent" href="del/?id={{item.Id}}&user={{item.username}}"><i class="trash fa-solid fa-trash-arrow-up"></i></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+<!-- =========================== END MAIN CONTENT ========================= -->
+{% endblock content %}
