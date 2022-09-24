@@ -60,25 +60,38 @@ To get a local copy up and running follow these simple example steps.
 # Installation
 
 _To install and set up the project. Follow the instructions below_
-
-1. Clone the repo and cd to it
+1. Setup a Virtual Environnement
 ```sh
-  $ git clone https://github.com/ez7mz/Expense-Tracker-Web-App.git
-  $ cd Expense-Tracker-Web-App
+    $ py -m venv env_name
 ```
-2. Activate Virtual  Environnement
+2. Activate the Virtual Environnement
 ```sh
-    $ Scripts\activate
+    $ .\env_name\Scripts\activate
+    $ cd env_name
 ```
-3. cd to Project Dir
+3. install django
+```sh
+  $ pip install django
+```
+4. install pandas and matplotlib
+```sh
+    $ pip install pandas
+    $ pip install matplotlib
+```
+5. clone the repo and copy final dir to the current directory
+```sh
+    $ git clone https://github.com/ez7mz/Expense-Tracker-Web-App.git
+    $ cp -r ./Expense-Tracker-Web-App/Final ./
+```
+6. cd to the project dir
 ```sh
     $ cd Final
 ```
-4. Run the server
+7. run the server
 ```sh
     $ py manage.py runserver
 ```
-5. go to the shown address [Example]
+8. Go to the showed address
 ```sh
     Watching for file changes with StatReloader
     Performing system checks...
