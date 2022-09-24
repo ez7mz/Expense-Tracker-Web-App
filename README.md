@@ -43,11 +43,11 @@ Through the great journey of working i used these technologies listed below:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-## Getting Started
+# 🏁 Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+## Prerequisites
 
 - Download and Install Python +3.6 &emsp;[@Python](https://www.python.org/downloads/)
 - Download and Install Pip
@@ -57,7 +57,7 @@ To get a local copy up and running follow these simple example steps.
   ```sh
     $ python get-pip.py
   ```
-# Installation
+## Installation
 
 _To install and set up the project. Follow the instructions below_
 1. Setup a Virtual Environnement
