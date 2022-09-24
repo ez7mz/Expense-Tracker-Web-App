@@ -78,21 +78,24 @@ _To install and set up the project. Follow the instructions below_
     $ pip install pandas
     $ pip install matplotlib
 ```
-5. clone the repo and copy final dir to the current directory `For Windows user do it manually`
+5. clone the repo
 ```sh
     $ git clone https://github.com/ez7mz/Expense-Tracker-Web-App.git
+```
+6. copy final dir to the current directory `For Windows user do it manually`
+   ```sh
     $ cp -r ./Expense-Tracker-Web-App/Final ./
     $ rm -rf Expense-Tracker-Web-App
-```
-6. cd to the project dir
+   ```
+7. cd to the project dir
 ```sh
     $ cd Final
 ```
-7. run the server
+8. run the server
 ```sh
     $ py manage.py runserver
 ```
-8. Go to the showed address
+9. Go to the showed address
 ```sh
     Watching for file changes with StatReloader
     Performing system checks...
