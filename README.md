@@ -82,6 +82,7 @@ _To install and set up the project. Follow the instructions below_
 ```sh
     $ git clone https://github.com/ez7mz/Expense-Tracker-Web-App.git
     $ cp -r ./Expense-Tracker-Web-App/Final ./
+    $ rm -rf Expense-Tracker-Web-App
 ```
 6. cd to the project dir
 ```sh
