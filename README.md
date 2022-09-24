@@ -78,7 +78,7 @@ _To install and set up the project. Follow the instructions below_
     $ pip install pandas
     $ pip install matplotlib
 ```
-5. clone the repo and copy final dir to the current directory
+5. clone the repo and copy final dir to the current directory `For Windows user do it manually`
 ```sh
     $ git clone https://github.com/ez7mz/Expense-Tracker-Web-App.git
     $ cp -r ./Expense-Tracker-Web-App/Final ./
